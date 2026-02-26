@@ -621,7 +621,7 @@ export default function Home() {
               }}
               style={{ opacity: heroOpacity }}
             >
-              A fully managed SPV writing $50–100k checks into the next generation of category-defining startups.
+              A fully managed syndicate writing $50–100k checks into the next generation of category-defining startups.
             </motion.p>
 
             <motion.div
