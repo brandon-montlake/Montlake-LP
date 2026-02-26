@@ -246,52 +246,6 @@ function AboutSection() {
           </p>
         </motion.div>
 
-        {/* Stats */}
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:mt-20 sm:grid-cols-3 sm:gap-6">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              className="blur-card flex flex-col items-center rounded-2xl px-6 py-8 sm:py-10"
-              initial={{ opacity: 0, y: 24, scale: 0.95 }}
-              animate={
-                isInView
-                  ? { opacity: 1, y: 0, scale: 1 }
-                  : { opacity: 0, y: 24, scale: 0.95 }
-              }
-              transition={{
-                duration: 0.5,
-                delay: 0.25 + i * 0.1,
-                ease: EASE,
-              }}
-            >
-              <span className="text-4xl font-light tracking-tight text-white sm:text-5xl md:text-6xl">
-                {stat.numValue !== null ? (
-                  <AnimatedCounter
-                    value={stat.numValue}
-                    prefix={stat.prefix}
-                    suffix={stat.suffix}
-                    isInView={isInView}
-                    delay={0.3 + i * 0.15}
-                  />
-                ) : (
-                  stat.display
-                )}
-              </span>
-              <span className="mt-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 sm:text-xs">
-                {stat.label}
-              </span>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.p
-          className="mt-10 text-sm font-medium tracking-wide text-neutral-500 sm:mt-14 sm:text-base"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.5, delay: 0.6, ease: EASE }}
-        >
-          Fully managed SPV&nbsp;&middot;&nbsp;Standard carry only
-        </motion.p>
       </div>
     </section>
   );
@@ -447,40 +401,21 @@ function FoundersCTA() {
           transition={{ duration: 0.5, delay: 0.35, ease: EASE }}
           className="mt-10 sm:mt-12"
         >
-          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
-            <a
-              href="https://angellist.com/s/montlake/n0bZC"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="blur-card inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10 active:bg-white/10 sm:py-3.5 sm:text-base"
+          <a
+            href="mailto:founders@montlake.vc"
+            className="blur-card inline-flex items-center gap-3 rounded-full px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10 active:bg-white/10 sm:py-3.5 sm:text-base"
+          >
+            Contact Us
+            <svg
+              className="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
             >
-              Invest With Us
-              <svg
-                className="h-4 w-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M7 17L17 7M17 7H7M17 7v10" />
-              </svg>
-            </a>
-            <a
-              href="mailto:founders@montlake.vc"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-4 text-sm font-medium text-neutral-400 transition-colors hover:text-white sm:py-3.5"
-            >
-              Or reach out directly
-              <svg
-                className="h-3.5 w-3.5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
         </motion.div>
       </div>
     </section>
@@ -686,7 +621,7 @@ export default function Home() {
               }}
               style={{ opacity: heroOpacity }}
             >
-              Making high-conviction bets in high-caliber startups.
+              A fully managed SPV writing $50–100k checks into the next generation of category-defining startups.
             </motion.p>
 
             <motion.div
